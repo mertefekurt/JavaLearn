@@ -1,38 +1,42 @@
 public class Module03_MethodsAndClasses {
     
-    // method without parameters
     static void greet() {
-        System.out.println("Hello!");
+        System.out.println("hello!");
     }
     
-    // method with parameters
     static void greet(String name) {
-        System.out.println("Hello " + name + "!");
+        System.out.println("hello " + name + "!");
     }
     
-    // method returning value
     static int add(int a, int b) {
         return a + b;
     }
     
+    static int multiply(int a, int b) {
+        return a * b;
+    }
+    
     public static void main(String[] args) {
-        // method calls
         greet();
-        greet("Alice");
+        greet("alice");
         
         int result = add(15, 25);
-        System.out.println("Sum: " + result);
+        System.out.println("sum: " + result);
         
-        // class instance
-        Student student1 = new Student("Alice", 20);
+        int product = multiply(5, 8);
+        System.out.println("product: " + product);
+        
+        Student student1 = new Student("alice", 20);
         student1.showInfo();
         
-        Student student2 = new Student("Bob", 22);
+        Student student2 = new Student("bob", 22);
         student2.showInfo();
+        
+        Student student3 = new Student("charlie", 19);
+        student3.showInfo();
     }
 }
 
-// simple class example
 class Student {
     String name;
     int age;
@@ -43,7 +47,6 @@ class Student {
     }
     
     void showInfo() {
-        System.out.println("Name: " + name + ", Age: " + age);
+        System.out.println("name: " + name + ", age: " + age);
     }
 }
-
