@@ -1,50 +1,55 @@
 public class Module02_ControlStructures {
     public static void main(String[] args) {
-        // if-else structure
         int age = 18;
         if (age >= 18) {
-            System.out.println("Adult");
+            System.out.println("adult");
         } else {
-            System.out.println("Not adult");
+            System.out.println("not adult");
         }
         
-        // switch-case
+        int score = 85;
+        if (score >= 90) {
+            System.out.println("grade: A");
+        } else if (score >= 80) {
+            System.out.println("grade: B");
+        } else if (score >= 70) {
+            System.out.println("grade: C");
+        } else {
+            System.out.println("grade: F");
+        }
+        
         int day = 3;
         switch (day) {
             case 1:
-                System.out.println("Monday");
+                System.out.println("monday");
                 break;
             case 2:
-                System.out.println("Tuesday");
+                System.out.println("tuesday");
                 break;
             case 3:
-                System.out.println("Wednesday");
+                System.out.println("wednesday");
                 break;
             default:
-                System.out.println("Other days");
+                System.out.println("other days");
         }
         
-        // for loop
-        System.out.println("For loop:");
+        System.out.println("for loop:");
         for (int i = 1; i <= 5; i++) {
-            System.out.println("Number: " + i);
+            System.out.println("number: " + i);
         }
         
-        // while loop
-        System.out.println("While loop:");
+        System.out.println("while loop:");
         int j = 1;
         while (j <= 3) {
-            System.out.println("J: " + j);
+            System.out.println("j: " + j);
             j++;
         }
         
-        // do-while loop
-        System.out.println("Do-while loop:");
+        System.out.println("do-while loop:");
         int k = 1;
         do {
-            System.out.println("K: " + k);
+            System.out.println("k: " + k);
             k++;
         } while (k <= 3);
     }
 }
-
