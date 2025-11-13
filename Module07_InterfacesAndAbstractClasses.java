@@ -19,6 +19,26 @@ public class Module07_InterfacesAndAbstractClasses {
         
         rectangle.draw();
         System.out.println("Rectangle area: " + rectangle.calculateArea());
+        
+        System.out.println("\n=== Default Methods in Interfaces ===");
+        ModernVehicle car2 = new ModernCar("Tesla");
+        car2.start();
+        car2.honk();
+        car2.stop();
+        
+        System.out.println("\n=== Multiple Interface Implementation ===");
+        SmartDevice phone = new SmartPhone("iPhone");
+        phone.turnOn();
+        phone.connect();
+        phone.turnOff();
+        
+        System.out.println("\n=== Static Methods in Interfaces ===");
+        String info = Configurable.getDefaultConfig();
+        System.out.println("Default config: " + info);
+        
+        Configurable device = new ConfigurableDevice();
+        device.configure("Custom settings");
+        System.out.println("Device configured: " + device.getConfiguration());
     }
 }
 
@@ -115,6 +135,111 @@ class Rectangle implements Drawable {
     @Override
     public double calculateArea() {
         return width * height;
+    }
+}
+
+interface ModernVehicle {
+    void start();
+    void stop();
+    
+    default void honk() {
+        System.out.println("Beep beep!");
+    }
+    
+    default void emergencyStop() {
+        System.out.println("Emergency stop activated!");
+        stop();
+    }
+}
+
+class ModernCar implements ModernVehicle {
+    private String brand;
+    
+    ModernCar(String brand) {
+        this.brand = brand;
+    }
+    
+    @Override
+    public void start() {
+        System.out.println(brand + " car started");
+    }
+    
+    @Override
+    public void stop() {
+        System.out.println(brand + " car stopped");
+    }
+}
+
+interface Powerable {
+    void turnOn();
+    void turnOff();
+}
+
+interface Connectable {
+    void connect();
+    void disconnect();
+}
+
+class SmartDevice implements Powerable, Connectable {
+    private String name;
+    private boolean isOn = false;
+    private boolean isConnected = false;
+    
+    SmartDevice(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public void turnOn() {
+        isOn = true;
+        System.out.println(name + " turned on");
+    }
+    
+    @Override
+    public void turnOff() {
+        isOn = false;
+        System.out.println(name + " turned off");
+    }
+    
+    @Override
+    public void connect() {
+        isConnected = true;
+        System.out.println(name + " connected");
+    }
+    
+    @Override
+    public void disconnect() {
+        isConnected = false;
+        System.out.println(name + " disconnected");
+    }
+}
+
+class SmartPhone extends SmartDevice {
+    SmartPhone(String name) {
+        super(name);
+    }
+}
+
+interface Configurable {
+    void configure(String settings);
+    String getConfiguration();
+    
+    static String getDefaultConfig() {
+        return "Default configuration loaded";
+    }
+}
+
+class ConfigurableDevice implements Configurable {
+    private String configuration = "None";
+    
+    @Override
+    public void configure(String settings) {
+        this.configuration = settings;
+    }
+    
+    @Override
+    public String getConfiguration() {
+        return configuration;
     }
 }
 
