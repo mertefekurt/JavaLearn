@@ -21,6 +21,7 @@ public class Module02_ControlStructures {
             System.out.println("grade: F");
         }
         
+        System.out.println("\n=== Switch Statement ===");
         int day = 3;
         switch (day) {
             case 1:
@@ -41,6 +42,28 @@ public class Module02_ControlStructures {
             default:
                 System.out.println("weekend");
         }
+        
+        System.out.println("\n=== Switch Expression (Java 14+) ===");
+        String dayName = switch (day) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            default -> "Weekend";
+        };
+        System.out.println("Day name: " + dayName);
+        
+        System.out.println("\n=== Switch with Multiple Cases ===");
+        int month = 2;
+        String season = switch (month) {
+            case 12, 1, 2 -> "Winter";
+            case 3, 4, 5 -> "Spring";
+            case 6, 7, 8 -> "Summer";
+            case 9, 10, 11 -> "Fall";
+            default -> "Invalid month";
+        };
+        System.out.println("Month " + month + " is in " + season);
         
         System.out.println("for loop:");
         for (int i = 1; i <= 5; i++) {
@@ -110,5 +133,38 @@ public class Module02_ControlStructures {
                 System.out.println("i: " + i + ", n: " + n);
             }
         }
+        
+        System.out.println("\n=== Labeled Continue ===");
+        outerLoop: for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    continue outerLoop;
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        
+        System.out.println("\n=== Nested If-Else ===");
+        int temperature = 25;
+        String weather = "sunny";
+        if (temperature > 30) {
+            if (weather.equals("sunny")) {
+                System.out.println("Very hot and sunny - stay indoors");
+            } else {
+                System.out.println("Hot but not sunny");
+            }
+        } else if (temperature > 20) {
+            System.out.println("Pleasant weather");
+        } else {
+            System.out.println("Cool weather");
+        }
+        
+        System.out.println("\n=== Ternary Operator Chain ===");
+        int value = 75;
+        String result = value >= 90 ? "Excellent" :
+                       value >= 80 ? "Good" :
+                       value >= 70 ? "Average" :
+                       value >= 60 ? "Below Average" : "Poor";
+        System.out.println("Value " + value + " is: " + result);
     }
 }
