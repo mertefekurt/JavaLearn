@@ -90,6 +90,110 @@ public class Module03_MethodsAndClasses {
         student3.showInfo();
         
         System.out.println("total students: " + Student.getTotalCount());
+        
+        System.out.println("\n=== Method Overloading Examples ===");
+        System.out.println("add(5, 3): " + add(5, 3));
+        System.out.println("add(5.5, 3.2): " + add(5.5, 3.2));
+        System.out.println("add(5, 3, 2): " + add(5, 3, 2));
+        
+        System.out.println("\n=== Builder Pattern ===");
+        Person person = new Person.Builder()
+                .name("Alice")
+                .age(25)
+                .email("alice@example.com")
+                .build();
+        person.displayInfo();
+        
+        Person person2 = new Person.Builder()
+                .name("Bob")
+                .age(30)
+                .build();
+        person2.displayInfo();
+        
+        System.out.println("\n=== Static Utility Methods ===");
+        System.out.println("Max of 10, 20, 15: " + MathUtils.max(10, 20, 15));
+        System.out.println("Min of 10, 20, 15: " + MathUtils.min(10, 20, 15));
+        System.out.println("Average of 10, 20, 30: " + MathUtils.average(10, 20, 30));
+        System.out.println("Is 17 prime? " + MathUtils.isPrime(17));
+    }
+    
+    static double add(double a, double b) {
+        return a + b;
+    }
+    
+    static int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+class MathUtils {
+    static int max(int a, int b, int c) {
+        return Math.max(Math.max(a, b), c);
+    }
+    
+    static int min(int a, int b, int c) {
+        return Math.min(Math.min(a, b), c);
+    }
+    
+    static double average(int... numbers) {
+        if (numbers.length == 0) return 0;
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return (double) sum / numbers.length;
+    }
+    
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        if (n <= 3) return true;
+        if (n % 2 == 0 || n % 3 == 0) return false;
+        for (int i = 5; i * i <= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0) return false;
+        }
+        return true;
+    }
+}
+
+class Person {
+    private String name;
+    private int age;
+    private String email;
+    
+    private Person(Builder builder) {
+        this.name = builder.name;
+        this.age = builder.age;
+        this.email = builder.email;
+    }
+    
+    void displayInfo() {
+        System.out.println("Person: " + name + ", Age: " + age + 
+                          (email != null ? ", Email: " + email : ""));
+    }
+    
+    static class Builder {
+        private String name;
+        private int age;
+        private String email;
+        
+        Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+        
+        Builder age(int age) {
+            this.age = age;
+            return this;
+        }
+        
+        Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+        
+        Person build() {
+            return new Person(this);
+        }
     }
 }
 
