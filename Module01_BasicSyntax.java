@@ -76,14 +76,16 @@ public class Module01_BasicSyntax {
         System.out.println("\n=== String Operations ===");
         String firstName = "john";
         String lastName = "doe";
-        String fullName = firstName + " " + lastName;
+        StringBuilder nameBuilder = new StringBuilder(firstName);
+        nameBuilder.append(" ").append(lastName);
+        String fullName = nameBuilder.toString();
         int nameLength = fullName.length();
         String upperName = fullName.toUpperCase();
         String lowerName = fullName.toLowerCase();
         String substring = fullName.substring(0, 4);
         boolean contains = fullName.contains("john");
         String replaced = fullName.replace("john", "John");
-        String trimmed = "  " + fullName + "  ".trim();
+        String trimmed = fullName.trim();
         
         System.out.println("full name: " + fullName);
         System.out.println("length: " + nameLength);
@@ -134,13 +136,23 @@ public class Module01_BasicSyntax {
         System.out.println("\n=== Bitwise Operations ===");
         int x = 5;
         int y = 3;
-        System.out.println("x = " + x + " (binary: " + Integer.toBinaryString(x) + ")");
-        System.out.println("y = " + y + " (binary: " + Integer.toBinaryString(y) + ")");
-        System.out.println("x & y (AND): " + (x & y) + " (binary: " + Integer.toBinaryString(x & y) + ")");
-        System.out.println("x | y (OR): " + (x | y) + " (binary: " + Integer.toBinaryString(x | y) + ")");
-        System.out.println("x ^ y (XOR): " + (x ^ y) + " (binary: " + Integer.toBinaryString(x ^ y) + ")");
-        System.out.println("~x (NOT): " + (~x) + " (binary: " + Integer.toBinaryString(~x) + ")");
-        System.out.println("x << 1 (left shift): " + (x << 1));
-        System.out.println("x >> 1 (right shift): " + (x >> 1));
+        StringBuilder bitwiseOutput = new StringBuilder();
+        bitwiseOutput.append("x = ").append(x).append(" (binary: ").append(Integer.toBinaryString(x)).append(")\n");
+        bitwiseOutput.append("y = ").append(y).append(" (binary: ").append(Integer.toBinaryString(y)).append(")\n");
+        
+        int andResult = x & y;
+        int orResult = x | y;
+        int xorResult = x ^ y;
+        int notResult = ~x;
+        int leftShift = x << 1;
+        int rightShift = x >> 1;
+        
+        bitwiseOutput.append("x & y (AND): ").append(andResult).append(" (binary: ").append(Integer.toBinaryString(andResult)).append(")\n");
+        bitwiseOutput.append("x | y (OR): ").append(orResult).append(" (binary: ").append(Integer.toBinaryString(orResult)).append(")\n");
+        bitwiseOutput.append("x ^ y (XOR): ").append(xorResult).append(" (binary: ").append(Integer.toBinaryString(xorResult)).append(")\n");
+        bitwiseOutput.append("~x (NOT): ").append(notResult).append(" (binary: ").append(Integer.toBinaryString(notResult)).append(")\n");
+        bitwiseOutput.append("x << 1 (left shift): ").append(leftShift).append("\n");
+        bitwiseOutput.append("x >> 1 (right shift): ").append(rightShift);
+        System.out.println(bitwiseOutput.toString());
     }
 }
