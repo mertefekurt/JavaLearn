@@ -56,9 +56,11 @@ public class Module02_ControlStructures {
         System.out.println("Month " + month + " is in " + season);
         
         System.out.println("for loop:");
+        StringBuilder forLoopOutput = new StringBuilder();
         for (int i = 1; i <= 5; i++) {
-            System.out.println("number: " + i);
+            forLoopOutput.append("number: ").append(i).append("\n");
         }
+        System.out.print(forLoopOutput.toString());
         
         System.out.println("nested for loop:");
         StringBuilder nestedOutput = new StringBuilder();
@@ -71,12 +73,14 @@ public class Module02_ControlStructures {
         System.out.print(nestedOutput.toString());
         
         System.out.println("for loop with break:");
+        StringBuilder breakLoopOutput = new StringBuilder();
         for (int i = 1; i <= 10; i++) {
             if (i == 6) {
                 break;
             }
-            System.out.println("i: " + i);
+            breakLoopOutput.append("i: ").append(i).append("\n");
         }
+        System.out.print(breakLoopOutput.toString());
         
         System.out.println("for loop with continue:");
         for (int i = 1; i <= 10; i++) {
