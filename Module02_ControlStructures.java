@@ -71,12 +71,14 @@ public class Module02_ControlStructures {
         }
         
         System.out.println("nested for loop:");
+        StringBuilder nestedOutput = new StringBuilder();
         for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
-                System.out.print(i + "," + j + " ");
+                nestedOutput.append(i).append(",").append(j).append(" ");
             }
-            System.out.println();
+            nestedOutput.append("\n");
         }
+        System.out.print(nestedOutput.toString());
         
         System.out.println("for loop with break:");
         for (int i = 1; i <= 10; i++) {
