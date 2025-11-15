@@ -23,25 +23,15 @@ public class Module02_ControlStructures {
         
         System.out.println("\n=== Switch Statement ===");
         int day = 3;
-        switch (day) {
-            case 1:
-                System.out.println("monday");
-                break;
-            case 2:
-                System.out.println("tuesday");
-                break;
-            case 3:
-                System.out.println("wednesday");
-                break;
-            case 4:
-                System.out.println("thursday");
-                break;
-            case 5:
-                System.out.println("friday");
-                break;
-            default:
-                System.out.println("weekend");
-        }
+        String dayOutput = switch (day) {
+            case 1 -> "monday";
+            case 2 -> "tuesday";
+            case 3 -> "wednesday";
+            case 4 -> "thursday";
+            case 5 -> "friday";
+            default -> "weekend";
+        };
+        System.out.println(dayOutput);
         
         System.out.println("\n=== Switch Expression (Java 14+) ===");
         String dayName = switch (day) {
