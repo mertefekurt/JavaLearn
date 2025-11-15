@@ -122,9 +122,11 @@ public class Module02_ControlStructures {
         
         System.out.println("enhanced for loop:");
         int[] numbers = {10, 20, 30, 40, 50};
+        StringBuilder numbersOutput = new StringBuilder();
         for (int num : numbers) {
-            System.out.println("value: " + num);
+            numbersOutput.append("value: ").append(num).append("\n");
         }
+        System.out.print(numbersOutput.toString());
         
         System.out.println("labeled break:");
         outer: for (int i = 1; i <= 3; i++) {
@@ -150,7 +152,7 @@ public class Module02_ControlStructures {
         int temperature = 25;
         String weather = "sunny";
         if (temperature > 30) {
-            if (weather.equals("sunny")) {
+            if ("sunny".equals(weather)) {
                 System.out.println("Very hot and sunny - stay indoors");
             } else {
                 System.out.println("Hot but not sunny");
