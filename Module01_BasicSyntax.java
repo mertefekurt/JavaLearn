@@ -11,15 +11,17 @@ public class Module01_BasicSyntax {
         boolean isTrue = true;
         String text = "learning java";
         
-        System.out.println("byte: " + byteValue + " (range: -128 to 127)");
-        System.out.println("short: " + shortValue + " (range: -32,768 to 32,767)");
-        System.out.println("int: " + number + " (range: -2^31 to 2^31-1)");
-        System.out.println("long: " + longValue + " (range: -2^63 to 2^63-1)");
-        System.out.println("double: " + decimal + " (64-bit floating point)");
-        System.out.println("float: " + floatValue + " (32-bit floating point)");
-        System.out.println("char: " + character + " (Unicode character)");
-        System.out.println("boolean: " + isTrue + " (true or false)");
-        System.out.println("string: " + text + " (object type)");
+        StringBuilder primitiveOutput = new StringBuilder();
+        primitiveOutput.append("byte: ").append(byteValue).append(" (range: -128 to 127)\n");
+        primitiveOutput.append("short: ").append(shortValue).append(" (range: -32,768 to 32,767)\n");
+        primitiveOutput.append("int: ").append(number).append(" (range: -2^31 to 2^31-1)\n");
+        primitiveOutput.append("long: ").append(longValue).append(" (range: -2^63 to 2^63-1)\n");
+        primitiveOutput.append("double: ").append(decimal).append(" (64-bit floating point)\n");
+        primitiveOutput.append("float: ").append(floatValue).append(" (32-bit floating point)\n");
+        primitiveOutput.append("char: ").append(character).append(" (Unicode character)\n");
+        primitiveOutput.append("boolean: ").append(isTrue).append(" (true or false)\n");
+        primitiveOutput.append("string: ").append(text).append(" (object type)");
+        System.out.println(primitiveOutput.toString());
         
         System.out.println("\n=== Type Sizes ===");
         System.out.println("byte size: " + Byte.BYTES + " bytes");
@@ -38,11 +40,13 @@ public class Module01_BasicSyntax {
         int quotient = a / b;
         int remainder = a % b;
         
-        System.out.println(a + " + " + b + " = " + sum);
-        System.out.println(a + " - " + b + " = " + diff);
-        System.out.println(a + " * " + b + " = " + product);
-        System.out.println(a + " / " + b + " = " + quotient);
-        System.out.println(a + " % " + b + " = " + remainder);
+        StringBuilder arithmeticOutput = new StringBuilder();
+        arithmeticOutput.append(a).append(" + ").append(b).append(" = ").append(sum).append("\n");
+        arithmeticOutput.append(a).append(" - ").append(b).append(" = ").append(diff).append("\n");
+        arithmeticOutput.append(a).append(" * ").append(b).append(" = ").append(product).append("\n");
+        arithmeticOutput.append(a).append(" / ").append(b).append(" = ").append(quotient).append("\n");
+        arithmeticOutput.append(a).append(" % ").append(b).append(" = ").append(remainder);
+        System.out.println(arithmeticOutput.toString());
         
         double preciseDivision = (double) a / b;
         System.out.println("Precise division: " + a + " / " + b + " = " + preciseDivision);
