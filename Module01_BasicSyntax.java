@@ -1,3 +1,7 @@
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.RoundingMode;
+
 public class Module01_BasicSyntax {
     public static void main(String[] args) {
         System.out.println("=== Primitive Data Types ===");
@@ -120,6 +124,22 @@ public class Module01_BasicSyntax {
         double parsedDouble = Double.parseDouble("45.67");
         System.out.println("String '123' to int: " + parsedInt);
         System.out.println("String '45.67' to double: " + parsedDouble);
+        
+        System.out.println("\n=== Big Numbers ===");
+        BigInteger bigInteger = new BigInteger("123456789012345678901234567890");
+        BigInteger anotherBigInteger = new BigInteger("987654321098765432109876543210");
+        BigInteger bigSum = bigInteger.add(anotherBigInteger);
+        BigInteger bigProduct = bigInteger.multiply(BigInteger.TEN);
+        System.out.println("BigInteger sum: " + bigSum);
+        System.out.println("BigInteger * 10: " + bigProduct);
+        
+        BigDecimal price = new BigDecimal("19.99");
+        BigDecimal discountRate = new BigDecimal("0.15");
+        BigDecimal discountAmount = price.multiply(discountRate);
+        BigDecimal finalPrice = price.subtract(discountAmount).setScale(2, RoundingMode.HALF_UP);
+        System.out.println("Original price: " + price);
+        System.out.println("Discount amount: " + discountAmount);
+        System.out.println("Final price: " + finalPrice);
         
         System.out.println("\n=== Compound Assignment Operators ===");
         int originalA = a;
