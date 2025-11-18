@@ -77,36 +77,44 @@ public class Module02_ControlStructures {
         System.out.print(breakLoopOutput.toString());
         
         System.out.println("for loop with continue:");
+        StringBuilder continueOutput = new StringBuilder();
         for (int i = 1; i <= 10; i++) {
             if (i % 2 == 0) {
                 continue;
             }
-            System.out.println("odd: " + i);
+            continueOutput.append("odd: ").append(i).append("\n");
         }
+        System.out.print(continueOutput.toString());
         
         System.out.println("while loop:");
         int j = 1;
+        StringBuilder whileOutput = new StringBuilder();
         while (j <= 3) {
-            System.out.println("j: " + j);
+            whileOutput.append("j: ").append(j).append("\n");
             j++;
         }
+        System.out.print(whileOutput.toString());
         
         System.out.println("while loop with break:");
         int k = 1;
+        StringBuilder breakWhileOutput = new StringBuilder();
         while (true) {
             if (k > 5) {
                 break;
             }
-            System.out.println("k: " + k);
+            breakWhileOutput.append("k: ").append(k).append("\n");
             k++;
         }
+        System.out.print(breakWhileOutput.toString());
         
         System.out.println("do-while loop:");
         int m = 1;
+        StringBuilder doWhileOutput = new StringBuilder();
         do {
-            System.out.println("m: " + m);
+            doWhileOutput.append("m: ").append(m).append("\n");
             m++;
         } while (m <= 3);
+        System.out.print(doWhileOutput.toString());
         
         System.out.println("enhanced for loop:");
         int[] numbers = {10, 20, 30, 40, 50};
