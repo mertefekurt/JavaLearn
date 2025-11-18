@@ -11,15 +11,7 @@ public class Module02_ControlStructures {
         System.out.println("status: " + status);
         
         int score = 85;
-        if (score >= 90) {
-            System.out.println("grade: A");
-        } else if (score >= 80) {
-            System.out.println("grade: B");
-        } else if (score >= 70) {
-            System.out.println("grade: C");
-        } else {
-            System.out.println("grade: F");
-        }
+        System.out.println(determineGrade(score));
         
         System.out.println("\n=== Switch Statement ===");
         int day = 3;
@@ -164,5 +156,15 @@ public class Module02_ControlStructures {
                        value >= 70 ? "Average" :
                        value >= 60 ? "Below Average" : "Poor";
         System.out.println("Value " + value + " is: " + result);
+    }
+
+    private static String determineGrade(int score) {
+        return switch (score / 10) {
+            case 10, 9 -> "grade: A";
+            case 8 -> "grade: B";
+            case 7 -> "grade: C";
+            case 6 -> "grade: D";
+            default -> "grade: F";
+        };
     }
 }
