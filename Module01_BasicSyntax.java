@@ -2,6 +2,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
+import java.util.Arrays;
+
 public class Module01_BasicSyntax {
     public static void main(String[] args) {
         System.out.println("=== Primitive Data Types ===");
@@ -61,6 +63,26 @@ public class Module01_BasicSyntax {
         
         double preciseDivision = (double) a / b;
         System.out.println("Precise division: " + a + " / " + b + " = " + preciseDivision);
+        
+        System.out.println("\n=== Array Statistics ===");
+        int[] metrics = {sum, diff, product, quotient, remainder};
+        int minMetric = metrics[0];
+        int maxMetric = metrics[0];
+        int totalMetrics = 0;
+        for (int metric : metrics) {
+            totalMetrics += metric;
+            if (metric < minMetric) {
+                minMetric = metric;
+            }
+            if (metric > maxMetric) {
+                maxMetric = metric;
+            }
+        }
+        double averageMetric = totalMetrics / (double) metrics.length;
+        System.out.println("values: " + Arrays.toString(metrics));
+        System.out.println("min: " + minMetric);
+        System.out.println("max: " + maxMetric);
+        System.out.println("average: " + averageMetric);
         
         System.out.println("\n=== Comparison Operators ===");
         boolean isEqual = (a == b);
