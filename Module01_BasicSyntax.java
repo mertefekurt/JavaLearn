@@ -28,12 +28,19 @@ public class Module01_BasicSyntax {
         System.out.println(primitiveOutput.toString());
         
         System.out.println("\n=== Type Sizes ===");
-        System.out.println("byte size: " + Byte.BYTES + " bytes");
-        System.out.println("short size: " + Short.BYTES + " bytes");
-        System.out.println("int size: " + Integer.BYTES + " bytes");
-        System.out.println("long size: " + Long.BYTES + " bytes");
-        System.out.println("float size: " + Float.BYTES + " bytes");
-        System.out.println("double size: " + Double.BYTES + " bytes");
+        String[] primitiveNames = {"byte", "short", "int", "long", "float", "double"};
+        int[] primitiveSizes = {Byte.BYTES, Short.BYTES, Integer.BYTES, Long.BYTES, Float.BYTES, Double.BYTES};
+        StringBuilder sizeOutput = new StringBuilder();
+        for (int i = 0; i < primitiveNames.length; i++) {
+            sizeOutput.append(primitiveNames[i])
+                    .append(" size: ")
+                    .append(primitiveSizes[i])
+                    .append(" bytes");
+            if (i < primitiveNames.length - 1) {
+                sizeOutput.append("\n");
+            }
+        }
+        System.out.println(sizeOutput.toString());
         
         System.out.println("\n=== Arithmetic Operations ===");
         int a = 10;
