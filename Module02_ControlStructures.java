@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Module02_ControlStructures {
     public static void main(String[] args) {
         int age = 18;
@@ -113,6 +115,9 @@ public class Module02_ControlStructures {
             numbersOutput.append("value: ").append(num).append("\n");
         }
         System.out.print(numbersOutput.toString());
+        
+        System.out.println("stream iteration:");
+        Arrays.stream(numbers).forEach(num -> System.out.println("stream value: " + num));
         
         System.out.println("labeled break:");
         outer: for (int i = 1; i <= 3; i++) {
