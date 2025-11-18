@@ -157,6 +157,20 @@ public class Module01_BasicSyntax {
         System.out.println("quotient /= 2: " + quotient);
         System.out.println("20 %= 7: " + modValue);
         
+        System.out.println("\n=== Math Utilities ===");
+        double squareRoot = Math.sqrt(product);
+        double powerValue = Math.pow(a, 3);
+        int maxValue = Math.max(a, b);
+        int minValue = Math.min(a, b);
+        long roundedDecimal = Math.round(decimal);
+        double randomValue = Math.random();
+        System.out.println("sqrt(product): " + squareRoot);
+        System.out.println("a^3: " + powerValue);
+        System.out.println("max(a, b): " + maxValue);
+        System.out.println("min(a, b): " + minValue);
+        System.out.println("rounded decimal: " + roundedDecimal);
+        System.out.println("random value (0-1): " + randomValue);
+        
         System.out.println("\n=== Bitwise Operations ===");
         int x = 5;
         int y = 3;
