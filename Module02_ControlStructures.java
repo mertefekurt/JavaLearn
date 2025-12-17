@@ -128,24 +128,28 @@ public class Module02_ControlStructures {
         Arrays.stream(numbers).forEach(num -> System.out.println("stream value: " + num));
         
         System.out.println("labeled break:");
+        StringBuilder labeledBreakOutput = new StringBuilder();
         outer: for (int i = 1; i <= 3; i++) {
             for (int n = 1; n <= 3; n++) {
                 if (i == 2 && n == 2) {
                     break outer;
                 }
-                System.out.println("i: " + i + ", n: " + n);
+                labeledBreakOutput.append("i: ").append(i).append(", n: ").append(n).append("\n");
             }
         }
+        System.out.print(labeledBreakOutput.toString());
         
         System.out.println("\n=== Labeled Continue ===");
+        StringBuilder labeledContinueOutput = new StringBuilder();
         outerLoop: for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
                 if (i == 2 && j == 2) {
                     continue outerLoop;
                 }
-                System.out.println("i: " + i + ", j: " + j);
+                labeledContinueOutput.append("i: ").append(i).append(", j: ").append(j).append("\n");
             }
         }
+        System.out.print(labeledContinueOutput.toString());
         
         System.out.println("\n=== Nested If-Else ===");
         int temperature = 25;
