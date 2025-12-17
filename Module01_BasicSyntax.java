@@ -79,10 +79,12 @@ public class Module01_BasicSyntax {
             }
         }
         double averageMetric = totalMetrics / (double) metrics.length;
-        System.out.println("values: " + Arrays.toString(metrics));
-        System.out.println("min: " + minMetric);
-        System.out.println("max: " + maxMetric);
-        System.out.println("average: " + averageMetric);
+        StringBuilder statsOutput = new StringBuilder();
+        statsOutput.append("values: ").append(Arrays.toString(metrics)).append("\n");
+        statsOutput.append("min: ").append(minMetric).append("\n");
+        statsOutput.append("max: ").append(maxMetric).append("\n");
+        statsOutput.append("average: ").append(averageMetric);
+        System.out.println(statsOutput.toString());
         
         System.out.println("\n=== Comparison Operators ===");
         boolean isEqual = (a == b);
