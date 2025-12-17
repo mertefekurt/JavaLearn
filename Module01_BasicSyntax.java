@@ -214,12 +214,14 @@ public class Module01_BasicSyntax {
         int minValue = Math.min(a, b);
         long roundedDecimal = Math.round(decimal);
         double randomValue = Math.random();
-        System.out.println("sqrt(product): " + squareRoot);
-        System.out.println("a^3: " + powerValue);
-        System.out.println("max(a, b): " + maxValue);
-        System.out.println("min(a, b): " + minValue);
-        System.out.println("rounded decimal: " + roundedDecimal);
-        System.out.println("random value (0-1): " + randomValue);
+        StringBuilder mathOutput = new StringBuilder();
+        mathOutput.append("sqrt(product): ").append(squareRoot).append("\n");
+        mathOutput.append("a^3: ").append(powerValue).append("\n");
+        mathOutput.append("max(a, b): ").append(maxValue).append("\n");
+        mathOutput.append("min(a, b): ").append(minValue).append("\n");
+        mathOutput.append("rounded decimal: ").append(roundedDecimal).append("\n");
+        mathOutput.append("random value (0-1): ").append(randomValue);
+        System.out.println(mathOutput.toString());
         
         System.out.println("\n=== Bitwise Operations ===");
         int x = 5;
