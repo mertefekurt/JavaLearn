@@ -161,10 +161,7 @@ public class Module02_ControlStructures {
         
         System.out.println("\n=== Ternary Operator Chain ===");
         int value = 75;
-        String result = value >= 90 ? "Excellent" :
-                       value >= 80 ? "Good" :
-                       value >= 70 ? "Average" :
-                       value >= 60 ? "Below Average" : "Poor";
+        String result = evaluatePerformance(value);
         System.out.println("Value " + value + " is: " + result);
     }
 
@@ -189,5 +186,13 @@ public class Module02_ControlStructures {
         } else {
             return "Cool weather";
         }
+    }
+    
+    // extract ternary chain to improve readability and maintainability
+    private static String evaluatePerformance(int value) {
+        return value >= 90 ? "Excellent" :
+               value >= 80 ? "Good" :
+               value >= 70 ? "Average" :
+               value >= 60 ? "Below Average" : "Poor";
     }
 }
