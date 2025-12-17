@@ -125,7 +125,9 @@ public class Module02_ControlStructures {
         System.out.print(numbersOutput.toString());
         
         System.out.println("stream iteration:");
-        Arrays.stream(numbers).forEach(num -> System.out.println("stream value: " + num));
+        StringBuilder streamOutput = new StringBuilder();
+        Arrays.stream(numbers).forEach(num -> streamOutput.append("stream value: ").append(num).append("\n"));
+        System.out.print(streamOutput.toString());
         
         System.out.println("labeled break:");
         StringBuilder labeledBreakOutput = new StringBuilder();
