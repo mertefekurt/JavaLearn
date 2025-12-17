@@ -150,17 +150,8 @@ public class Module02_ControlStructures {
         System.out.println("\n=== Nested If-Else ===");
         int temperature = 25;
         String weather = "sunny";
-        if (temperature > 30) {
-            if ("sunny".equals(weather)) {
-                System.out.println("Very hot and sunny - stay indoors");
-            } else {
-                System.out.println("Hot but not sunny");
-            }
-        } else if (temperature > 20) {
-            System.out.println("Pleasant weather");
-        } else {
-            System.out.println("Cool weather");
-        }
+        String weatherAdvice = getWeatherAdvice(temperature, weather);
+        System.out.println(weatherAdvice);
         
         System.out.println("\n=== Ternary Operator Chain ===");
         int value = 75;
@@ -179,5 +170,18 @@ public class Module02_ControlStructures {
             case 6 -> "grade: D";
             default -> "grade: F";
         };
+    }
+    
+    // extract weather advice logic to improve code organization
+    private static String getWeatherAdvice(int temperature, String weather) {
+        if (temperature > 30) {
+            return "sunny".equals(weather) 
+                ? "Very hot and sunny - stay indoors" 
+                : "Hot but not sunny";
+        } else if (temperature > 20) {
+            return "Pleasant weather";
+        } else {
+            return "Cool weather";
+        }
     }
 }
