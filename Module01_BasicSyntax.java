@@ -128,15 +128,17 @@ public class Module01_BasicSyntax {
         String replaced = fullName.replace("john", "John");
         String trimmed = fullName.trim();
         
-        System.out.println("full name: " + fullName);
-        System.out.println("length: " + nameLength);
-        System.out.println("uppercase: " + upperName);
-        System.out.println("lowercase: " + lowerName);
-        System.out.println("substring(0,4): " + substring);
-        System.out.println("contains 'john': " + contains);
-        System.out.println("replaced: " + replaced);
-        System.out.println("equals check: " + fullName.equals("john doe"));
-        System.out.println("equalsIgnoreCase: " + fullName.equalsIgnoreCase("JOHN DOE"));
+        StringBuilder stringOpsOutput = new StringBuilder();
+        stringOpsOutput.append("full name: ").append(fullName).append("\n");
+        stringOpsOutput.append("length: ").append(nameLength).append("\n");
+        stringOpsOutput.append("uppercase: ").append(upperName).append("\n");
+        stringOpsOutput.append("lowercase: ").append(lowerName).append("\n");
+        stringOpsOutput.append("substring(0,4): ").append(substring).append("\n");
+        stringOpsOutput.append("contains 'john': ").append(contains).append("\n");
+        stringOpsOutput.append("replaced: ").append(replaced).append("\n");
+        stringOpsOutput.append("equals check: ").append(fullName.equals("john doe")).append("\n");
+        stringOpsOutput.append("equalsIgnoreCase: ").append(fullName.equalsIgnoreCase("JOHN DOE"));
+        System.out.println(stringOpsOutput.toString());
         
         System.out.println("\n=== Type Casting ===");
         int integer = 100;
@@ -146,11 +148,13 @@ public class Module01_BasicSyntax {
         byte byteCast = (byte) integer;
         char charFromInt = (char) 65;
         
-        System.out.println("int (" + integer + ") to double: " + doubleNumber);
-        System.out.println("double to float: " + floatNumber);
-        System.out.println("double to int: " + backToInt);
-        System.out.println("int to byte: " + byteCast);
-        System.out.println("int 65 to char: " + charFromInt);
+        StringBuilder castingOutput = new StringBuilder();
+        castingOutput.append("int (").append(integer).append(") to double: ").append(doubleNumber).append("\n");
+        castingOutput.append("double to float: ").append(floatNumber).append("\n");
+        castingOutput.append("double to int: ").append(backToInt).append("\n");
+        castingOutput.append("int to byte: ").append(byteCast).append("\n");
+        castingOutput.append("int 65 to char: ").append(charFromInt);
+        System.out.println(castingOutput.toString());
         
         String numberString = "123";
         int parsedInt = Integer.parseInt(numberString);
@@ -193,11 +197,13 @@ public class Module01_BasicSyntax {
         int modValue = 20;
         modValue %= 7;
         
-        System.out.println("a (" + originalA + ") += 5: " + a);
-        System.out.println("b (" + originalB + ") -= 2: " + b);
-        System.out.println("product *= 2: " + product);
-        System.out.println("quotient /= 2: " + quotient);
-        System.out.println("20 %= 7: " + modValue);
+        StringBuilder compoundOutput = new StringBuilder();
+        compoundOutput.append("a (").append(originalA).append(") += 5: ").append(a).append("\n");
+        compoundOutput.append("b (").append(originalB).append(") -= 2: ").append(b).append("\n");
+        compoundOutput.append("product *= 2: ").append(product).append("\n");
+        compoundOutput.append("quotient /= 2: ").append(quotient).append("\n");
+        compoundOutput.append("20 %= 7: ").append(modValue);
+        System.out.println(compoundOutput.toString());
         
         System.out.println("\n=== Math Utilities ===");
         double squareRoot = Math.sqrt(product);
