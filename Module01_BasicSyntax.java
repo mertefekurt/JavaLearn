@@ -92,12 +92,14 @@ public class Module01_BasicSyntax {
         boolean isGreaterOrEqual = (a >= b);
         boolean isLessOrEqual = (a <= b);
         
-        System.out.println(a + " == " + b + ": " + isEqual);
-        System.out.println(a + " > " + b + ": " + isGreater);
-        System.out.println(a + " < " + b + ": " + isLess);
-        System.out.println(a + " != " + b + ": " + isNotEqual);
-        System.out.println(a + " >= " + b + ": " + isGreaterOrEqual);
-        System.out.println(a + " <= " + b + ": " + isLessOrEqual);
+        StringBuilder comparisonOutput = new StringBuilder();
+        comparisonOutput.append(a).append(" == ").append(b).append(": ").append(isEqual).append("\n");
+        comparisonOutput.append(a).append(" > ").append(b).append(": ").append(isGreater).append("\n");
+        comparisonOutput.append(a).append(" < ").append(b).append(": ").append(isLess).append("\n");
+        comparisonOutput.append(a).append(" != ").append(b).append(": ").append(isNotEqual).append("\n");
+        comparisonOutput.append(a).append(" >= ").append(b).append(": ").append(isGreaterOrEqual).append("\n");
+        comparisonOutput.append(a).append(" <= ").append(b).append(": ").append(isLessOrEqual);
+        System.out.println(comparisonOutput.toString());
         
         System.out.println("\n=== Logical Operators ===");
         boolean andResult = (a > 5) && (b < 10);
@@ -105,10 +107,12 @@ public class Module01_BasicSyntax {
         boolean notResult = !isTrue;
         boolean xorResult = (a > 5) ^ (b > 10);
         
-        System.out.println("(a > 5) && (b < 10): " + andResult);
-        System.out.println("(a > 15) || (b < 3): " + orResult);
-        System.out.println("!isTrue: " + notResult);
-        System.out.println("(a > 5) ^ (b > 10): " + xorResult);
+        StringBuilder logicalOutput = new StringBuilder();
+        logicalOutput.append("(a > 5) && (b < 10): ").append(andResult).append("\n");
+        logicalOutput.append("(a > 15) || (b < 3): ").append(orResult).append("\n");
+        logicalOutput.append("!isTrue: ").append(notResult).append("\n");
+        logicalOutput.append("(a > 5) ^ (b > 10): ").append(xorResult);
+        System.out.println(logicalOutput.toString());
         
         System.out.println("\n=== String Operations ===");
         String firstName = "john";
