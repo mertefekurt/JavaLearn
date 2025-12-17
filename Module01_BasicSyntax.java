@@ -154,6 +154,15 @@ public class Module01_BasicSyntax {
         System.out.println("String '123' to int: " + parsedInt);
         System.out.println("String '45.67' to double: " + parsedDouble);
         
+        // safe parsing with error handling
+        String invalidNumber = "abc";
+        try {
+            int invalidInt = Integer.parseInt(invalidNumber);
+            System.out.println("Parsed: " + invalidInt);
+        } catch (NumberFormatException e) {
+            System.out.println("Failed to parse '" + invalidNumber + "': " + e.getMessage());
+        }
+        
         System.out.println("\n=== Big Numbers ===");
         BigInteger bigInteger = new BigInteger("123456789012345678901234567890");
         BigInteger anotherBigInteger = new BigInteger("987654321098765432109876543210");
