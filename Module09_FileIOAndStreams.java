@@ -2,6 +2,7 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Module09_FileIOAndStreams {
     public static void main(String[] args) {
@@ -89,7 +90,10 @@ public class Module09_FileIOAndStreams {
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(fileName))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                numbers.add(Integer.parseInt(line.trim()));
+                String trimmedLine = line.trim();
+                if (!trimmedLine.isEmpty()) {
+                    numbers.add(Integer.parseInt(trimmedLine));
+                }
             }
         }
         return numbers;
@@ -108,10 +112,11 @@ public class Module09_FileIOAndStreams {
     }
     
     static List<String> listFilesInDirectory(String dirPath) throws IOException {
-        return Files.list(Paths.get(dirPath))
-                .filter(Files::isRegularFile)
-                .map(p -> p.getFileName().toString())
-                .collect(Collectors.toList());
+        try (Stream<Path> files = Files.list(Paths.get(dirPath))) {
+            return files.filter(Files::isRegularFile)
+                    .map(p -> p.getFileName().toString())
+                    .collect(Collectors.toList());
+        }
     }
     
     static void cleanupTestFiles(String... fileNames) {
@@ -124,4 +129,3 @@ public class Module09_FileIOAndStreams {
         }
     }
 }
-

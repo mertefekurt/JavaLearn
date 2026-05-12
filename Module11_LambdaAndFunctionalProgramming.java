@@ -1,7 +1,6 @@
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Module11_LambdaAndFunctionalProgramming {
     public static void main(String[] args) {
@@ -148,6 +147,8 @@ public class Module11_LambdaAndFunctionalProgramming {
 
 @FunctionalInterface
 interface Calculator {
+    /**
+     * Applies a named arithmetic operation to two operands.
+     */
     int calculate(int a, int b, String operation);
 }
-

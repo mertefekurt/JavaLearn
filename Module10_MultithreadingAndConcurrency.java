@@ -2,9 +2,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Module10_MultithreadingAndConcurrency {
-    private static int counter = 0;
     private static final AtomicInteger atomicCounter = new AtomicInteger(0);
-    private static final Object lock = new Object();
     
     public static void main(String[] args) throws InterruptedException {
         System.out.println("=== Thread Basics ===");
@@ -150,7 +148,7 @@ public class Module10_MultithreadingAndConcurrency {
 }
 
 class SimpleTask implements Runnable {
-    private String name;
+    private final String name;
     
     SimpleTask(String name) {
         this.name = name;
@@ -181,4 +179,3 @@ class Counter {
         return value;
     }
 }
-
