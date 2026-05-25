@@ -4,6 +4,8 @@ import java.math.RoundingMode;
 
 import java.util.Arrays;
 
+/** Coordinates the module01_ basic syntax behavior. */
+
 public class Module01_BasicSyntax {
     public static void main(String[] args) {
         System.out.println("=== Primitive Data Types ===");
